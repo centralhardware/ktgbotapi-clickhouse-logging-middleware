@@ -17,8 +17,7 @@ telegramBotWithBehaviourAndLongPolling(
         CoroutineScope(Dispatchers.IO),
         builder = {
             includeMiddlewares {
-                loggingMiddleware(AppConfig.appName())
+                loggingMiddleware("<appName>")
             }
-        },
-        block = block)
+        }) {}
 ```
