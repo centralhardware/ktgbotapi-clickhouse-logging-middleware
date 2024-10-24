@@ -1,3 +1,7 @@
+add environment variable;
+```shell
+export CLICKHOUSE_URL=jdbc:ch:http://<username>:<password>@<host>:8123/<database>
+```
 add dependency:
 ```gradle
 repositories {
@@ -10,7 +14,7 @@ dependencies {
     implementation("com.github.centralhardware:ktgbotapi-clickhouse-logging-middleware:<lastst ver>")
 }
 ```
-use 
+add middleware in Behaviour builder 
 ```kotlin
 telegramBotWithBehaviourAndLongPolling(
         "<TOKEN>",
