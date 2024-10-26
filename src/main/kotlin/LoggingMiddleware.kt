@@ -48,8 +48,8 @@ private fun save(data: String, clazz: KClass<*>, income: Boolean, appName: Strin
                     "type" to if (income) "IN" else "OUT",
                     "data" to data,
                     "className" to clazz.simpleName,
-                    "host" to (System.getenv("HOST") ?: InetAddress.getLocalHost().hostName)
-                )
+                    "host" to (System.getenv("HOST") ?: InetAddress.getLocalHost().hostName),
+                ),
             )
         )
 }
@@ -87,7 +87,7 @@ fun TelegramBotMiddlewaresPipelinesHandler.Builder.loggingMiddleware(appName: St
                                 .toString(),
                             request::class,
                             false,
-                            appName
+                            appName,
                         )
                     }
                     .onFailure { KSLog.info("Failed to save request ${request::class.simpleName}") }
