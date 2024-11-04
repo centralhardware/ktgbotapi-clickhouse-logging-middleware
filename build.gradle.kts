@@ -17,7 +17,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.11.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.clickhouse:clickhouse-jdbc:0.7.0")
-    implementation("com.clickhouse:clickhouse-http-client:0.7.0")
+    implementation("com.clickhouse:clickhouse-http-client:0.7.1")
     implementation("org.lz4:lz4-java:1.8.0")
     implementation("com.github.seratch:kotliquery:1.9.0")
 }
