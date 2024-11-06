@@ -98,7 +98,7 @@ fun TelegramBotMiddlewaresPipelinesHandler.Builder.loggingMiddleware(appName: St
                 (result.getOrNull() as ArrayList<Any>).forEach {
                     save(gson.toJson(it), it::class, true, appName)
                 }
-            } else if (request !is DeleteWebhook && request !is GetMe) {
+            } else if (request !is DeleteWebhook && request !is GetMe && result.getOrNull() !is ByteArray) {
                 save(gson.toJson(result), result.getOrNull()!!::class, true, appName)
             }
             null
