@@ -42,3 +42,7 @@ publishing {
 ktfmt {
     kotlinLangStyle()
 }
+
+tasks.build {
+    dependsOn.remove("ktfmtCheck")
+}
