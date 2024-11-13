@@ -68,7 +68,7 @@ private val dataSource: DataSource =
     }
 
 @OptIn(Warning::class)
-fun TelegramBotMiddlewaresPipelinesHandler.Builder.loggingMiddleware(appName: String) {
+fun TelegramBotMiddlewaresPipelinesHandler.Builder.clickhouseLogging(appName: String) {
     addMiddleware {
         val gson = Gson()
         val nonstrictJsonFormat = Json {

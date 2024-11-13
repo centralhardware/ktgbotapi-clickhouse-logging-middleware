@@ -10,7 +10,7 @@ suspend fun main() {
         CoroutineScope(Dispatchers.IO),
         builder = {
             includeMiddlewares {
-                loggingMiddleware("integrationTest")
+                clickhouseLogging("integrationTest")
             }
         }
     ) {
