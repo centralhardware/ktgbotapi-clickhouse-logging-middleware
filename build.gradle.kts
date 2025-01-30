@@ -15,7 +15,7 @@ val clickhouseVersion = "0.8.0"
 
 dependencies {
     implementation("dev.inmo:tgbotapi:23.1.1")
-    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.google.code.gson:gson:2.12.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.clickhouse:clickhouse-jdbc:$clickhouseVersion")
     implementation("com.clickhouse:clickhouse-http-client:$clickhouseVersion")
