@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-val clickhouseVersion = "0.8.6"
+val clickhouseVersion = "0.9.0"
 
 dependencies {
     implementation("dev.inmo:tgbotapi:25.0.0")
