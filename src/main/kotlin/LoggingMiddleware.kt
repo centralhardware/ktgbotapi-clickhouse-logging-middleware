@@ -1,6 +1,7 @@
 package me.centralhardware.telegram
 
 import com.clickhouse.jdbc.ClickHouseDataSource
+import com.clickhouse.jdbc.DataSourceImpl
 import com.google.gson.Gson
 import dev.inmo.kslog.common.KSLog
 import dev.inmo.kslog.common.info
@@ -20,6 +21,7 @@ import kotlinx.serialization.SerializationStrategy
 import kotlinx.serialization.json.Json
 import kotliquery.queryOf
 import kotliquery.sessionOf
+import java.util.Properties
 
 /**
  * List of request types that should be excluded from logging
@@ -59,7 +61,7 @@ private const val INSERT_QUERY = """
  */
 private val dataSource: DataSource by lazy {
     try {
-        ClickHouseDataSource(System.getenv("CLICKHOUSE_URL") ?: 
+        DataSourceImpl(System.getenv("CLICKHOUSE_URL", Properties()) ?:
             throw IllegalStateException("CLICKHOUSE_URL environment variable is not set"))
     } catch (e: SQLException) {
         KSLog.info("Failed to initialize ClickHouse data source: ${e.message}")
