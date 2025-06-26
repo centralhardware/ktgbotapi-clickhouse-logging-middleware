@@ -61,8 +61,8 @@ private const val INSERT_QUERY = """
  */
 private val dataSource: DataSource by lazy {
     try {
-        DataSourceImpl(System.getenv("CLICKHOUSE_URL", Properties()) ?:
-            throw IllegalStateException("CLICKHOUSE_URL environment variable is not set"))
+        DataSourceImpl(System.getenv("CLICKHOUSE_URL") ?:
+            throw IllegalStateException("CLICKHOUSE_URL environment variable is not set"), Properties())
     } catch (e: SQLException) {
         KSLog.info("Failed to initialize ClickHouse data source: ${e.message}")
         throw RuntimeException("Failed to initialize ClickHouse data source", e)
