@@ -158,4 +158,5 @@ fun TelegramBotMiddlewaresPipelinesHandler.Builder.clickhouseLogging(appName: St
             null
         }
     }
+    KSLog.info("Initialized ClickHouse logging middleware")
 }
